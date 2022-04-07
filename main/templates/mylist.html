@@ -1,0 +1,56 @@
+{% extends "header.html" %}
+{% load static %}
+{% block css_login %}
+<link rel="stylesheet" href="{%  static 'index.css'  %}">
+{% endblock css_login %}
+{% block content %}      
+
+<div class="row title" >
+
+<h2 >My Cars List</h2>    
+</div>
+<div class="row" >
+    
+    {% for object in mylist_cars %}
+        
+  
+        
+    <div class="card col-3" style="width: 18rem;">
+      {% if object.company == 'Audi' %}
+        <img class="card-img-top" src="https://cars.usnews.com/static/images/Auto/izmo/i31351528/2017_audi_r8_angularfront.jpg">
+       
+        {% elif object.company == 'BMW' %}
+        <img class="card-img-top" src="https://di-uploads-pod12.dealerinspire.com/bmwofwilmingtonbakermotorcompanyoem/uploads/2021/11/MSeries.png">
+       
+        {% elif object.company == 'Ford' %}
+        <img class="card-img-top" src="https://www.ccarprice.com/products/Ford-Explorer-Limited-2020_1.jpg">
+        
+        {% elif object.company == 'Mercedes' %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/600x337/n/cw/ec/48067/s-class-exterior-right-front-three-quarter-3.jpeg?q=75">
+
+        {% elif object.company == 'Skoda' %}
+        <img class="card-img-top" src="https://cdn.motor1.com/images/mgl/BVAJw/s1/4x3/2017-skoda-rapid-facelift.webp">
+
+        
+        {% elif object.company == 'Volkswagen' %}
+        <img class="card-img-top" src="https://images.carandbike.com/car-images/large/volkswagen/passat/volkswagen-passat.jpg?v=19">
+
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">Brand : {{ object.company }} </h5>
+          <p class="card-text">Model : {{ object.model }}</p>
+          <p class="card-text">Price : {{ object.price }}</p>
+          <p class="card-text">year : {{ object.year }}</p>
+          <p class="card-text">Fuel Type : {{ object.fueltype }}</p>
+          <p class="card-text">Transmission : {{ object.transmission }}</p>
+          <p class="card-text">Mileage : {{ object.mileage }}</p>
+          <p class="card-text">Tax : {{ object.tax }}</p>
+          <p class="card-text">MPG : {{ object.mpg }}</p>
+          <p class="card-text">Engine Size : {{ object.enginesize }}</p>
+
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% endblock %}

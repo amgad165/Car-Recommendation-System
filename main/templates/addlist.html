@@ -1,0 +1,55 @@
+{% extends "header.html" %}
+{% load static %}
+{% block css_login %}
+<link rel="stylesheet" href="{%  static 'index.css'  %}">
+{% endblock css_login %}
+{% block content %}      
+<div class="row header">
+    <div class="col-4"></div>
+<div class="col-5"> <H1><i class="fa fa-car"></i> Car Recommender System</H1></div>
+<div class="col-3"></div>
+</div>
+<div class="row title" >
+
+<h2 >Recommended Cars </h2>    
+</div>
+<div class="row" >
+    
+    {% for object in data %}
+        
+  
+        
+    <div class="card col-3" style="width: 18rem;">
+      {% if object.0 == 'audi' %}
+        <img class="card-img-top" src="https://cars.usnews.com/static/images/Auto/izmo/i31351528/2017_audi_r8_angularfront.jpg">
+       
+        {% elif object.0 == 'bmw' %}
+        <img class="card-img-top" src="https://di-uploads-pod12.dealerinspire.com/bmwofwilmingtonbakermotorcompanyoem/uploads/2021/11/MSeries.png">
+       
+        {% elif object.0 == 'ford' %}
+        <img class="card-img-top" src="https://www.ccarprice.com/products/Ford-Explorer-Limited-2020_1.jpg">
+        
+        {% elif object.0 == 'mercedes' %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/600x337/n/cw/ec/48067/s-class-exterior-right-front-three-quarter-3.jpeg?q=75">
+
+        {% elif object.0 == 'skoda' %}
+        <img class="card-img-top" src="https://cdn.motor1.com/images/mgl/BVAJw/s1/4x3/2017-skoda-rapid-facelift.webp">
+
+        
+        {% elif object.0 == 'volkswagen' %}
+        <img class="card-img-top" src="https://images.carandbike.com/car-images/large/volkswagen/passat/volkswagen-passat.jpg?v=19">
+
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">Company : {{ object.0 }} </h5>
+          <p class="card-text">Model : {{ object.1 }}</p>
+          <p class="card-text">Price : {{ object.2 }}</p>
+          <p class="card-text">Fuel Type : {{ object.3 }}</p>
+<button class="btn btn-primary" >Add to list</button>
+<button class="btn btn-primary" >Description</button>
+        </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,163 @@
+{% extends "header.html" %}
+{% load static %}
+{% block css_login %}
+<link rel="stylesheet" href="{%  static 'index.css'  %}">
+{% endblock css_login %}
+{% block content %}      
+
+<div class="row title" >
+
+<h2>Recommended Cars</h2>  
+
+</div>
+<div class="row" >
+
+
+    {% for object in data %}
+        
+  
+        
+    <div class="card col-3" style="width: 18rem;">
+      {% if object.1 == 'Audi' %}
+   
+      {% if object.2 == " Q3" %}
+      <img class="card-img-top" src="https://media.hatla2eestatic.com/uploads/ncarmodel/6892/big-up_8dea3ceee4962a517c593c86dacb4ab4.jpg">
+
+      {% elif object.2 == ' A5' %}
+      <img class="card-img-top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Audi_A5_Sportback_F5_IMG_2835.jpg/1200px-Audi_A5_Sportback_F5_IMG_2835.jpg">
+      
+      {% elif object.2 == ' Q2' %}
+      <img class="card-img-top" src="https://s1.cdn.autoevolution.com/images/models/AUDI_Q2-2020_main.jpg">
+    
+      {% elif object.2 == ' A3' %}
+      <img class="card-img-top" src="https://www.egy-car.com/wp-content/uploads/2020/02/Audi-A3-1.jpg">
+
+      {% else %}
+      
+        <img class="card-img-top" src="https://cars.usnews.com/static/images/Auto/izmo/i31351528/2017_audi_r8_angularfront.jpg">
+        {% endif %}
+     
+        {% elif object.1 == 'BMW' %}
+       
+        {% if object.2 == " X4" %}
+        <img class="card-img-top" src="https://www.bmw-egypt.com/content/dam/bmw/common/all-models/x-series/x4/2019/Models-and-Equipment/bmw-x-series-x4-models-equipment-lines-model-m-sport-01.jpg">
+  
+        {% elif object.2 == ' 3 Series' %}
+        <img class="card-img-top" src="https://www.bmw-egypt.com/content/dam/bmw/common/all-models/3-series/sedan/2018/navigation/bmw-3-series-modellfinder.png">
+        
+        {% elif object.2 == ' M2' %}
+        <img class="card-img-top" src="https://www.motortrend.com/uploads/sites/10/2019/02/2019-bmw-m2-competition-coupe-angular-front.png">
+      
+        {% elif object.2 == ' M4' %}
+        <img class="card-img-top" src="https://www.bmw-yemen.com/content/dam/bmw/common/all-models/m-series/m4-coupe/2020/highlights/bmw-4-series-coupe-m-automobiles-gallery-impressions-m4-coupe-01-mobile.jpg">
+  
+        {% else %}
+        
+        <img class="card-img-top" src="https://di-uploads-pod12.dealerinspire.com/bmwofwilmingtonbakermotorcompanyoem/uploads/2021/11/MSeries.png">
+         
+          {% endif %}
+        {% elif object.1 == 'Ford' %}
+        {% if object.2 == " Focus" %}
+        <img class="card-img-top" src="https://media.hatla2eestatic.com/uploads/ncarmodel/7995/big-up_72c744da93394ad27cb59a6c3a70cc73.png">
+  
+        {% elif object.2 == ' Puma' %}
+        <img class="card-img-top" src="https://www.ford.it/content/dam/guxeu/de/shop/kaufen/personal-offers/puma/ford-puma-de-st_line-16x9-1600x900-bb-grey-ford-puma-st-line.jpg.renditions.original.png">
+        
+        {% elif object.2 == ' Mustang' %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/664x374/cw/ec/23766/Ford-Mustang-Exterior-126883.jpg?wm=0&q=75">
+      
+        {% elif object.2 == ' S-MAX' %}
+        <img class="card-img-top" src="https://www.gpas-cache.ford.com/guid/1b065a55-e69e-3879-9eab-30ab963820f0.png">
+  
+        {% else %}
+        
+        <img class="card-img-top" src="https://www.ccarprice.com/products/Ford-Explorer-Limited-2020_1.jpg">
+         
+          {% endif %}
+        {% elif object.1 == 'Mercedes' %}
+        {% if object.2 == " GLC Class" %}
+        <img class="card-img-top" src="https://cars.usnews.com/static/images/Auto/izmo/i2314442/2016_mercedes_benz_glc_class_angularfront.jpg">
+  
+        {% elif object.2 == ' GL Class' %}
+        <img class="card-img-top" src="https://www.motortrend.com/uploads/sites/10/2015/11/2011-mercedes-benz-gl-class-450-suv-angular-front.png">
+        
+        {% elif object.2 == ' V Class' %}
+        <img class="card-img-top" src="https://www.mercedes-benz.com.eg/ar/passengercars/mercedes-benz-cars/models/v-class/v-class-447/safety/saftey-assistance-systems/_jcr_content/hotspotimage/image.MQ6.12.20190826122045.jpeg">
+      
+        {% elif object.2 == ' E Class' %}
+        <img class="card-img-top" src="https://pictures.dealer.com/m/mercedesbenzoflancaster/0755/a62096bdcc696fb67970c739bf69f827x.jpg">
+  
+        {% else %}
+        
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/600x337/n/cw/ec/48067/s-class-exterior-right-front-three-quarter-3.jpeg?q=75">
+         
+          {% endif %}
+        {% elif object.1 == 'Skoda' %}
+        {% if object.2 == " Superb" %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/664x374/n/cw/ec/39039/superb-exterior-right-front-three-quarter-2.jpeg?q=75">
+  
+        {% elif object.2 == ' Kodiaq' %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/0x0/n/cw/ec/49051/kodiaq-exterior-right-front-three-quarter.jpeg?isig=0">
+        
+        {% elif object.2 == ' Karoq' %}
+        <img class="card-img-top" src="https://ymimg1.b8cdn.com/resized/car_model/7427/logo/listing_main_01.png">
+      
+        {% elif object.2 == ' Octavia' %}
+        <img class="card-img-top" src="https://cdni.autocarindia.com/utils/imageresizer.ashx?n=http://cms.haymarketindia.net/model/uploads/modelimages/Skoda-Octavia-030720211706.jpg">
+  
+        {% else %}
+        
+        <img class="card-img-top" src="https://cdn.motor1.com/images/mgl/BVAJw/s1/4x3/2017-skoda-rapid-facelift.webp">
+         
+          {% endif %}
+
+        
+        {% elif object.1 == 'Volkswagen' %}
+        {% if object.2 == " Superb" %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/664x374/n/cw/ec/39039/superb-exterior-right-front-three-quarter-2.jpeg?q=75">
+  
+        {% elif object.2 == ' Caravelle' %}
+        <img class="card-img-top" src="http://auto-bus-services.com/images/Caravelle.jpg">
+        
+        {% elif object.2 == ' Amarok' %}
+        <img class="card-img-top" src="https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/Amarok%20V6%20580SE%20White.png">
+      
+        {% elif object.2 == ' Tiguan' %}
+        <img class="card-img-top" src="https://imgd.aeplcdn.com/664x374/n/cw/ec/53123/tiguan-exterior-right-front-three-quarter-4.jpeg?q=75">
+  
+        {% else %}
+        
+        <img class="card-img-top" src="https://images.carandbike.com/car-images/large/volkswagen/passat/volkswagen-passat.jpg?v=19">
+         
+          {% endif %}
+
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">Brand : {{ object.1 }} </h5>
+          <p class="card-text">Model : {{ object.2 }}</p>
+          <p class="card-text">Price : {{ object.3 }}$</p>
+          <p class="card-text">Fuel Type : {{ object.4 }}</p>
+          <p class="card-text">Year : {{ object.5 }}</p>
+        
+
+
+         
+
+      
+          {% if object.0 in cars %}
+
+          <button type="button" class="btn btn-primary" disabled>Added</button>
+
+          {% else %}
+          <a href="{% url 'addlist' object.0  %}">
+<button class="btn btn-primary" >Add to list</button>
+</a>
+{% endif %}
+<a href="{% url 'details' object.0  %}">
+  <button class="btn btn-primary" >Details</button>
+  </a>        </div>
+      </div>
+      {% endfor %}
+</div>
+
+{% endblock %}
